@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>OOJS: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+     class Shape {
+      constructor(name, sides, sideLength) {
+        this.name = name;
+        this.sides = sides;
+        this.sideLength = sideLength;
+      }
+
+      calcPerimeter() {
+        const perimeter = this.sides * this.sideLength;
+        console.log(`Perimeter of the ${this.name} is: ${perimeter}`);
+      }
+    }
+
+    //Implementing inheritance i:e ceating a class Sqare which extends Shape's class properties
+    class Square extends Shape {
+      constructor(sideLength) {
+        //seting up the initial parameters which is name, sides and sideLenght
+        super("square", 4, sideLength);
+      }
+
+      calcArea() {
+        const area = this.sideLength * this.sideLength;
+        console.log(`Area of the ${this.name} is: ${area}`);
+      }
+    }
+
+     // Create an instance of the Square class
+     const square = new Square(5);
+
+    // Call calcPerimeter() and calcArea() methods
+    square.calcPerimeter();
+    square.calcArea();
+    
+  </script>
+
+</html>
